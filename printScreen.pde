@@ -9,7 +9,7 @@ void printScreen () {
 
   if (timer > 1000) {
     println("print!");
-    saveFrame("line-######.png");
+    saveFrame(System.getProperty("user.home") + "/Desktop/stitch02/data/line-######.png"); 
     timer=0;
     quantasImagens++;
     list [0] =  Integer.toString(quantasImagens);

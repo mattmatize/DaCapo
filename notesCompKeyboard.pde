@@ -1,5 +1,6 @@
 int lastVelocityC = 0;
 int lastVelocityCSharp = 0;
+int lastVelocityD = 0;
 
 void notesCompKeyboard() {
 
@@ -15,7 +16,6 @@ void notesCompKeyboard() {
     } else {
       noteCVelocity[ENTRYPOINT_SCREEN] = lastVelocityC;
     }
-    
   } else {
     noteC[ENTRYPOINT_SCREEN] = 0;
     noteCVelocity[ENTRYPOINT_SCREEN] = 0;
@@ -23,21 +23,31 @@ void notesCompKeyboard() {
 
   if (keyz[1]) {
     noteCSharp[ENTRYPOINT_SCREEN] = 1;
-    
+
     if (positionLastInput == 1) {
       noteCSharpVelocity[ENTRYPOINT_SCREEN] = currentVelocity;
       lastVelocityCSharp = currentVelocity;
     } else {
       noteCSharpVelocity[ENTRYPOINT_SCREEN] = lastVelocityCSharp;
     }
-    
   } else {
     noteCSharp[ENTRYPOINT_SCREEN] = 0;
     noteCSharpVelocity[ENTRYPOINT_SCREEN] = 0;
   }
 
-  noteD[ENTRYPOINT_SCREEN] = keyz[2] ? 1 : 0;
-  noteDVelocity[ENTRYPOINT_SCREEN] = currentVelocity;
+  if (keyz[2]) {
+    noteD[ENTRYPOINT_SCREEN] = 1;
+
+    if (positionLastInput == 2) {
+      noteDVelocity[ENTRYPOINT_SCREEN] = currentVelocity;
+      lastVelocityD = currentVelocity;
+    } else {
+      noteDVelocity[ENTRYPOINT_SCREEN] = lastVelocityD;
+    }
+  } else {
+    noteD[ENTRYPOINT_SCREEN] = 0;
+    noteDVelocity[ENTRYPOINT_SCREEN] = 0;
+  }
 
   noteDSharp[ENTRYPOINT_SCREEN] = keyz[3] ? 1 : 0;
   noteDSharpVelocity[ENTRYPOINT_SCREEN] = currentVelocity;

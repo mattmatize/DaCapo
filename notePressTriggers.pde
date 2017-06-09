@@ -22,6 +22,7 @@ void notePressTrigggers(int pitch, int velocity) {
 
   if (pitch == 50) {
     keyz[2] = true;
+    positionLastInput = 2;
     //D.trigger();
     //noteDVelocity[ENTRYPOINT_SCREEN] = velocity;
     Re = true;

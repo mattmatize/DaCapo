@@ -11,8 +11,8 @@ void printScreen () {
     println("print!");
     saveFrame(System.getProperty("user.home") + "/Desktop/stitch02/data/line-######.png"); 
     timer=0;
-    quantasImagens++;
-    list [0] =  Integer.toString(quantasImagens);
-    saveStrings("numero-de-imagens.txt", list);
+    //quantasImagens++;
+    //list [0] =  Integer.toString(quantasImagens);
+    //saveStrings("numero-de-imagens.txt", list);
   }
 }

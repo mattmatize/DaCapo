@@ -168,7 +168,7 @@ void midiMessage(MidiMessage message, long timestamp, String bus_name) {
 
 void noteOn(int channel, int pitch, int velocity) {
   // Receive a noteOn
-  println(); //<>// //<>// //<>// //<>//
+  println(); //<>// //<>// //<>// //<>// //<>//
   println("Note On:");
   println("--------");
   println("Channel:"+channel);

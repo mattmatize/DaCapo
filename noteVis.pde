@@ -1,4 +1,4 @@
-void noteVis() { //<>// //<>// //<>//
+void noteVis() { //<>//
 
   int SCREEN_SIZE = 699;
   //---------first octave---------

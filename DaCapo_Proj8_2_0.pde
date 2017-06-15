@@ -1,4 +1,4 @@
-//Da Capo in its current form spans 5 octaves (C2 to C5 ---- (61 notes in total). In this code, middle C (C4) is also referred to as C4 or Do4 (C of the Third Octave covered in Da Capo). //<>//
+//Da Capo in its current form spans 5 octaves (C2 to C5 ---- (61 notes in total). In this code, middle C (C4) is also referred to as C4 or Do4 (C of the Third Octave covered in Da Capo). //<>// //<>// //<>// //<>//
 //First Octave = starts with C2
 //Second Octave = C3
 //Third Octave = C4
@@ -20,6 +20,20 @@ import javax.sound.midi.MidiMessage;
 
 MidiBus myBus; 
 
+
+//---------first octave---------
+boolean Do2=false;
+boolean Do2Sharp=false;
+boolean Re2=false;
+boolean Re2Sharp=false;
+boolean Mi2=false;
+boolean Fa2=false;
+boolean Fa2Sharp=false;
+boolean Sol2=false;
+boolean Sol2Sharp=false;
+boolean La2=false;
+boolean La2Sharp=false;
+boolean Ti2=false;
 
 //---------second octave---------
 
@@ -59,6 +73,44 @@ boolean Do5=false;
 
 
 boolean keyz[] = new boolean [61];
+
+// ---- first octave -----
+
+int [] noteC2 = new int[MAX_NOTES];
+int [] noteC2Velocity = new int[MAX_NOTES];
+
+int [] noteC2Sharp = new int[MAX_NOTES];
+int [] noteC2SharpVelocity = new int[MAX_NOTES];
+
+int [] noteD2 = new int[MAX_NOTES];
+int [] noteD2Velocity = new int[MAX_NOTES];
+
+int [] noteD2Sharp = new int[MAX_NOTES];
+int [] noteD2SharpVelocity = new int[MAX_NOTES];
+
+int [] noteE2 = new int[MAX_NOTES];
+int [] noteE2Velocity = new int[MAX_NOTES];
+
+int [] noteF2 = new int[MAX_NOTES];
+int [] noteF2Velocity = new int[MAX_NOTES];
+
+int [] noteF2Sharp = new int[MAX_NOTES];
+int [] noteF2SharpVelocity = new int[MAX_NOTES];
+
+int [] noteG2 = new int[MAX_NOTES];
+int [] noteG2Velocity = new int[MAX_NOTES];
+
+int [] noteG2Sharp = new int[MAX_NOTES];
+int [] noteG2SharpVelocity = new int[MAX_NOTES];
+
+int [] noteA2 = new int[MAX_NOTES];
+int [] noteA2Velocity = new int[MAX_NOTES];
+
+int [] noteA2Sharp = new int[MAX_NOTES];
+int [] noteA2SharpVelocity = new int[MAX_NOTES];
+
+int [] noteB2 = new int[MAX_NOTES];
+int [] noteB2Velocity = new int[MAX_NOTES];
 
 // ---- second octave -----
 

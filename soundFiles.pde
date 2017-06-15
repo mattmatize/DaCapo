@@ -2,11 +2,11 @@ void soundFiles () {
 
   ////---------first octave---------
 
-  //C = minim.loadSample ("C.mp3", // filename
+  //C3 = minim.loadSample ("C.mp3", // filename
   //  512 // buffer size
   //  );
 
-  //CSharp = minim.loadSample( "CSharp.mp3", // filename
+  //C3Sharp = minim.loadSample( "CSharp.mp3", // filename
   //  512      // buffer size
   //  );
 
@@ -102,7 +102,7 @@ void soundFiles () {
 
   ////-----------third octave-----------
 
-  //C3 = minim.loadSample( "C3.mp3", // filename
+  //C5 = minim.loadSample( "C3.mp3", // filename
   //  512      // buffer size
   //  );
 }

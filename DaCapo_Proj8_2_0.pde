@@ -1,3 +1,11 @@
+//Da Capo in its current form spans 5 octaves (C2 to C5 ---- (61 notes in total). In this code, middle C (C4) is also referred to as C4 or Do4 (C of the Third Octave covered in Da Capo). //<>//
+//First Octave = starts with C2
+//Second Octave = C3
+//Third Octave = C4
+//Fourth Octave = C5
+//Fifth Octave = C6
+//with C7 as a bonus and note limit
+
 // SimpleMidi.pde
 
 int timer = 0;
@@ -13,124 +21,126 @@ import javax.sound.midi.MidiMessage;
 MidiBus myBus; 
 
 
-//---------first octave---------
-
-boolean Do=false;
-boolean DoSharp=false;
-boolean Re=false;
-boolean ReSharp=false;
-boolean Mi=false;
-boolean Fa=false;
-boolean FaSharp=false;
-boolean Sol=false;
-boolean SolSharp=false;
-boolean La=false;
-boolean LaSharp=false;
-boolean Ti=false;
-
 //---------second octave---------
 
-boolean Do2=false;
-boolean Do2Sharp=false;
-boolean Re2=false;
-boolean Re2Sharp=false;
-boolean Mi2=false;
-boolean Fa2=false;
-boolean Fa2Sharp=false;
-boolean Sol2=false;
-boolean Sol2Sharp=false;
-boolean La2=false;
-boolean La2Sharp=false;
-boolean Ti2=false;
+boolean Do3=false;
+boolean Do3Sharp=false;
+boolean Re3=false;
+boolean Re3Sharp=false;
+boolean Mi3=false;
+boolean Fa3=false;
+boolean Fa3Sharp=false;
+boolean Sol3=false;
+boolean Sol3Sharp=false;
+boolean La3=false;
+boolean La3Sharp=false;
+boolean Ti3=false;
 
 //---------third octave---------
 
-boolean Do3=false;
+//MIDDLE C - C4
+boolean Do4=false;
+boolean Do4Sharp=false;
+boolean Re4=false;
+boolean Re4Sharp=false;
+boolean Mi4=false;
+boolean Fa4=false;
+boolean Fa4Sharp=false;
+boolean Sol4=false;
+boolean Sol4Sharp=false;
+boolean La4=false;
+boolean La4Sharp=false;
+boolean Ti4=false;
+
+//---------fourth octave---------
+
+boolean Do5=false;
 
 
 
-boolean keyz[] = new boolean [25];
-
-// ---- first octave -----
-
-int [] noteC = new int[MAX_NOTES];
-int [] noteCVelocity = new int[MAX_NOTES];
-
-int [] noteCSharp = new int[MAX_NOTES];
-int [] noteCSharpVelocity = new int[MAX_NOTES];
-
-int [] noteD = new int[MAX_NOTES];
-int [] noteDVelocity = new int[MAX_NOTES];
-
-int [] noteDSharp = new int[MAX_NOTES];
-int [] noteDSharpVelocity = new int[MAX_NOTES];
-
-int [] noteE = new int[MAX_NOTES];
-int [] noteEVelocity = new int[MAX_NOTES];
-
-int [] noteF = new int[MAX_NOTES];
-int [] noteFVelocity = new int[MAX_NOTES];
-
-int [] noteFSharp = new int[MAX_NOTES];
-int [] noteFSharpVelocity = new int[MAX_NOTES];
-
-int [] noteG = new int[MAX_NOTES];
-int [] noteGVelocity = new int[MAX_NOTES];
-
-int [] noteGSharp = new int[MAX_NOTES];
-int [] noteGSharpVelocity = new int[MAX_NOTES];
-
-int [] noteA = new int[MAX_NOTES];
-int [] noteAVelocity = new int[MAX_NOTES];
-
-int [] noteASharp = new int[MAX_NOTES];
-int [] noteASharpVelocity = new int[MAX_NOTES];
-
-int [] noteB = new int[MAX_NOTES];
-int [] noteBVelocity = new int[MAX_NOTES];
+boolean keyz[] = new boolean [61];
 
 // ---- second octave -----
 
-int [] noteC2 = new int[MAX_NOTES];
-int [] noteC2Velocity = new int[MAX_NOTES];
+int [] noteC3 = new int[MAX_NOTES];
+int [] noteC3Velocity = new int[MAX_NOTES];
 
-int [] noteC2Sharp = new int[MAX_NOTES];
-int [] noteC2SharpVelocity = new int[MAX_NOTES];
+int [] noteC3Sharp = new int[MAX_NOTES];
+int [] noteC3SharpVelocity = new int[MAX_NOTES];
 
-int [] noteD2 = new int[MAX_NOTES];
-int [] noteD2Velocity = new int[MAX_NOTES];
+int [] noteD3 = new int[MAX_NOTES];
+int [] noteD3Velocity = new int[MAX_NOTES];
 
-int [] noteD2Sharp = new int[MAX_NOTES];
-int [] noteD2SharpVelocity = new int[MAX_NOTES];
+int [] noteD3Sharp = new int[MAX_NOTES];
+int [] noteD3SharpVelocity = new int[MAX_NOTES];
 
-int [] noteE2 = new int[MAX_NOTES];
-int [] noteE2Velocity = new int[MAX_NOTES];
+int [] noteE3 = new int[MAX_NOTES];
+int [] noteE3Velocity = new int[MAX_NOTES];
 
-int [] noteF2 = new int[MAX_NOTES];
-int [] noteF2Velocity = new int[MAX_NOTES];
+int [] noteF3 = new int[MAX_NOTES];
+int [] noteF3Velocity = new int[MAX_NOTES];
 
-int [] noteF2Sharp = new int[MAX_NOTES];
-int [] noteF2SharpVelocity = new int[MAX_NOTES];
+int [] noteF3Sharp = new int[MAX_NOTES];
+int [] noteF3SharpVelocity = new int[MAX_NOTES];
 
-int [] noteG2 = new int[MAX_NOTES];
-int [] noteG2Velocity = new int[MAX_NOTES];
+int [] noteG3 = new int[MAX_NOTES];
+int [] noteG3Velocity = new int[MAX_NOTES];
 
-int [] noteG2Sharp = new int[MAX_NOTES];
-int [] noteG2SharpVelocity = new int[MAX_NOTES];
+int [] noteG3Sharp = new int[MAX_NOTES];
+int [] noteG3SharpVelocity = new int[MAX_NOTES];
 
-int [] noteA2 = new int[MAX_NOTES];
-int [] noteA2Velocity = new int[MAX_NOTES];
+int [] noteA3 = new int[MAX_NOTES];
+int [] noteA3Velocity = new int[MAX_NOTES];
 
-int [] noteA2Sharp = new int[MAX_NOTES];
-int [] noteA2SharpVelocity = new int[MAX_NOTES];
+int [] noteA3Sharp = new int[MAX_NOTES];
+int [] noteA3SharpVelocity = new int[MAX_NOTES];
 
-int [] noteB2 = new int[MAX_NOTES];
-int [] noteB2Velocity = new int[MAX_NOTES];
+int [] noteB3 = new int[MAX_NOTES];
+int [] noteB3Velocity = new int[MAX_NOTES];
 
 // ---- third octave -----
 
-int [] noteC3 = new int[MAX_NOTES];
-int [] noteC3Velocity = new int[MAX_NOTES];
+//MIDDLE C - C4
+int [] noteC4 = new int[MAX_NOTES];
+int [] noteC4Velocity = new int[MAX_NOTES];
+
+int [] noteC4Sharp = new int[MAX_NOTES];
+int [] noteC4SharpVelocity = new int[MAX_NOTES];
+
+int [] noteD4 = new int[MAX_NOTES];
+int [] noteD4Velocity = new int[MAX_NOTES];
+
+int [] noteD4Sharp = new int[MAX_NOTES];
+int [] noteD4SharpVelocity = new int[MAX_NOTES];
+
+int [] noteE4 = new int[MAX_NOTES];
+int [] noteE4Velocity = new int[MAX_NOTES];
+
+int [] noteF4 = new int[MAX_NOTES];
+int [] noteF4Velocity = new int[MAX_NOTES];
+
+int [] noteF4Sharp = new int[MAX_NOTES];
+int [] noteF4SharpVelocity = new int[MAX_NOTES];
+
+int [] noteG4 = new int[MAX_NOTES];
+int [] noteG4Velocity = new int[MAX_NOTES];
+
+int [] noteG4Sharp = new int[MAX_NOTES];
+int [] noteG4SharpVelocity = new int[MAX_NOTES];
+
+int [] noteA4 = new int[MAX_NOTES];
+int [] noteA4Velocity = new int[MAX_NOTES];
+
+int [] noteA4Sharp = new int[MAX_NOTES];
+int [] noteA4SharpVelocity = new int[MAX_NOTES];
+
+int [] noteB4 = new int[MAX_NOTES];
+int [] noteB4Velocity = new int[MAX_NOTES];
+
+// ---- fourth octave -----
+
+int [] noteC5 = new int[MAX_NOTES];
+int [] noteC5Velocity = new int[MAX_NOTES];
 
 int currentColor = 0;
 int midiDevice  = 3;
@@ -138,7 +148,7 @@ int currentVelocity = 0;
 
 
 void setup() {
-  size(1000, 1000, P2D);
+  size(1270, 1000, P2D);
   //fullScreen(P3D);
   noStroke();
   MidiBus.list(); 
@@ -168,7 +178,7 @@ void midiMessage(MidiMessage message, long timestamp, String bus_name) {
 
 void noteOn(int channel, int pitch, int velocity) {
   // Receive a noteOn
-  println(); //<>// //<>// //<>// //<>//
+  println(); //<>// //<>// //<>//
   println("Note On:");
   println("--------");
   println("Channel:"+channel);

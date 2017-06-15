@@ -1,158 +1,159 @@
 void keyPressTriggers() {
 
-  //---------first octave---------
+  //---------second octave---------
 
   if (key == 'z') {
-    keyz[0] = true;
-    //C.trigger();
-    Do = true;
+    keyz[12] = true;
+    //C3.trigger();
+    Do3 = true;
   }
 
   if (key == 's') {
-    keyz[1] = true;
-    //CSharp.trigger();
-    DoSharp = true;
+    keyz[13] = true;
+    //C3Sharp.trigger();
+    Do3Sharp = true;
   }
 
   if (key == 'x') {
-    keyz[2] = true;
+    keyz[14] = true;
     //D.trigger();
-    Re = true;
+    Re3 = true;
   }
 
   if (key == 'd') {
-    keyz[3] = true;
+    keyz[15] = true;
     //DSharp.trigger();
-    ReSharp = true;
+    Re3Sharp = true;
   }
 
   if (key == 'c') {
-    keyz[4] = true;
+    keyz[16] = true;
     //E.trigger();
-    Mi = true;
+    Mi3 = true;
   }
 
   if (key == 'v') {
-    keyz[5] = true;
+    keyz[17] = true;
     //F.trigger();
-    Fa = true;
+    Fa3 = true;
   }
 
   if (key == 'g') {
-    keyz[6] = true;
+    keyz[18] = true;
     //FSharp.trigger();
-    FaSharp = true;
+    Fa3Sharp = true;
   }
 
   if (key == 'b') {
-    keyz[7] = true;
+    keyz[19] = true;
     //G.trigger();
-    Sol = true;
+    Sol3 = true;
   }
 
   if (key == 'h') {
-    keyz[8] = true;
+    keyz[20] = true;
     //GSharp.trigger();
-    SolSharp = true;
+    Sol3Sharp = true;
   }
 
   if (key == 'n') {
-    keyz[9] = true;
+    keyz[21] = true;
     //A.trigger();
-    La = true;
+    La3 = true;
   }
 
   if (key == 'j') {
-    keyz[10] = true;
+    keyz[22] = true;
     //ASharp.trigger();
-    LaSharp = true;
+    La3Sharp = true;
   }
 
   if (key == 'm') {
-    keyz[11] = true;
+    keyz[23] = true;
     //B.trigger();
-    Ti = true;
+    Ti3 = true;
   }
 
-  //-----------second octave-----------
+  //-----------third octave-----------
 
+  //MIDDLE C - C4
   if (key == 'q') { 
-    keyz[12] = true;  
-    //C2.trigger();
-    Do2 = true;
+    keyz[24] = true;  
+    //C4.trigger();
+    Do4 = true;
   }
 
   if (key == '2') {
-    keyz[13] = true;
-    //C2Sharp.trigger();
-    Do2Sharp = true;
+    keyz[25] = true;
+    //C4Sharp.trigger();
+    Do4Sharp = true;
   }
 
   if (key == 'w') {
-    keyz[14] = true;
-    //D2.trigger();
-    Re2 = true;
+    keyz[26] = true;
+    //D4.trigger();
+    Re4 = true;
   }
 
   if (key == '3') {
-    keyz[15] = true;
-    //D2Sharp.trigger();
-    Re2Sharp = true;
+    keyz[27] = true;
+    //D4Sharp.trigger();
+    Re4Sharp = true;
   }
 
   if (key == 'e') {
-    keyz[16] = true;
-    //E2.trigger();
-    Mi2 = true;
+    keyz[28] = true;
+    //E4.trigger();
+    Mi4 = true;
   }
 
   if (key == 'r') {
-    keyz[17] = true;
-    //F2.trigger();
-    Fa2 = true;
+    keyz[29] = true;
+    //F4.trigger();
+    Fa4 = true;
   }
 
   if (key == '5') {
-    keyz[18] = true;
-    //F2Sharp.trigger();
-    Fa2Sharp = true;
+    keyz[30] = true;
+    //F4Sharp.trigger();
+    Fa4Sharp = true;
   }
 
   if (key == 't') {
-    keyz[19] = true;
-    //G2.trigger();
-    Sol2 = true;
+    keyz[31] = true;
+    //G4.trigger();
+    Sol4 = true;
   }
 
   if (key == '6') {
-    keyz[20] = true;
-    //G2Sharp.trigger();
-    Sol2Sharp = true;
+    keyz[32] = true;
+    //G4Sharp.trigger();
+    Sol4Sharp = true;
   }
 
   if (key == 'y') {
-    keyz[21] = true;
-    //A2.trigger();
-    La2 = true;
+    keyz[33] = true;
+    //A4.trigger();
+    La4 = true;
   }
 
   if (key == '7') {
-    keyz[22] = true;
-    //A2Sharp.trigger();
-    La2Sharp = true;
+    keyz[34] = true;
+    //A4Sharp.trigger();
+    La4Sharp = true;
   }
 
   if (key == 'u') {
-    keyz[23] = true;
-    //B2.trigger();
-    Ti2 = true;
+    keyz[25] = true;
+    //B4.trigger();
+    Ti4 = true;
   }
 
-//-----------third octave------------
+  //-----------fourth octave------------
 
   if (key == 'i') {
-    keyz[24] = true;
-    //C3.trigger();
-    Do3 = true;
+    keyz[36] = true;
+    //C5.trigger();
+    Do5 = true;
   }
 }

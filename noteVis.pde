@@ -109,7 +109,7 @@ void noteVis() { //<>//
       stroke(0, 88, 38);
       line(360 - noteB2Velocity[i]/velDiv, i, 360 + noteB2Velocity[i]/velDiv, i);
     }
-    noteB2[i]=noteB3[i+1];
+    noteB2[i]=noteB2[i+1];
     noteB2Velocity[i] = noteB2Velocity[i + 1];
   }
 

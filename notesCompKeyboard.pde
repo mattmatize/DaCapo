@@ -648,7 +648,7 @@ void notesCompKeyboard() {
   }
   //------------------
   if (keyz[40]) {
-    noteE4[ENTRYPOINT_SCREEN] = 1;
+    noteE5[ENTRYPOINT_SCREEN] = 1;
 
     if (positionLastInput == 40) {
       noteE5Velocity[ENTRYPOINT_SCREEN] = currentVelocity;
@@ -676,7 +676,7 @@ void notesCompKeyboard() {
   }
   //------------------
   if (keyz[42]) {
-    noteF4Sharp[ENTRYPOINT_SCREEN] = 1;
+    noteF5Sharp[ENTRYPOINT_SCREEN] = 1;
 
     if (positionLastInput == 42) {
       noteF5SharpVelocity[ENTRYPOINT_SCREEN] = currentVelocity;
@@ -846,7 +846,7 @@ void notesCompKeyboard() {
   }
   //------------------
   if (keyz[54]) {
-    noteF4Sharp[ENTRYPOINT_SCREEN] = 1;
+    noteF6Sharp[ENTRYPOINT_SCREEN] = 1;
 
     if (positionLastInput == 54) {
       noteF6SharpVelocity[ENTRYPOINT_SCREEN] = currentVelocity;

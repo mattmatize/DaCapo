@@ -233,4 +233,153 @@ void noteOffReleaseTrigger(int velocity, int pitch) {
     //C5.stop();
     Do5 = false;
   }
+
+  if ((pitch == 73 && velocity == 0|| pitch == 73 && velocity == 64)) {
+    keyz[37] = false;
+    //C5Sharp.stop();
+    Do5Sharp = false;
+  }
+
+  if ((pitch == 74 && velocity == 0 || pitch == 74 && velocity == 64)) {
+    keyz[38] = false;
+    //D5.stop();
+    Re5 = false;
+  }
+
+  if ((pitch == 75 && velocity == 0 || pitch == 75 && velocity == 64)) {
+    keyz[39] = false;
+    //D5Sharp.stop();
+    Re5Sharp = false;
+  }
+
+  if ((pitch == 76 && velocity == 0 || pitch == 76 && velocity == 64)) {
+    keyz[40] = false;
+    //E5.stop();
+    Mi5 = false;
+  }
+
+  if ((pitch == 77 && velocity == 0 || pitch == 77 && velocity == 64)) {
+    keyz[41] = false;
+    //F5.stop();
+    Fa5 = false;
+  }
+
+  if ((pitch == 78 && velocity == 0 || pitch == 78 && velocity == 64)) {
+    keyz[42] = false;
+    //F5Sharp.stop();
+    Fa5Sharp = false;
+  }
+
+  if ((pitch == 79 && velocity == 0 || pitch == 79 && velocity == 64)) {
+    keyz[43] = false;
+    //G5.stop();
+    Sol5 = false;
+  }
+
+  if ((pitch == 80 && velocity == 0 || pitch == 80 && velocity == 64)) {
+    keyz[44] = false;
+    //G5Sharp.stop();
+    Sol5Sharp = false;
+  }
+
+  if ((pitch == 81 && velocity == 0 || pitch == 81 && velocity == 64)) {
+    keyz[45] = false;
+    //A5.stop();
+    La5 = false;
+  }
+
+  if ((pitch == 82 && velocity == 0 || pitch == 82 && velocity == 64)) {
+    keyz[46] = false;
+    //A5Sharp.stop();
+    La5Sharp = false;
+  }
+
+  if ((pitch == 83 && velocity == 0 || pitch == 83 && velocity == 64)) {
+    keyz[47] = false;
+    //B5.stop();
+    Ti5 = false;
+  }
+
+  //---------fifth octave---------
+
+  if ((pitch == 84 && velocity == 0 || pitch == 84 && velocity == 64)) {
+    keyz[48] = false;
+    //C6.stop();
+    Do6 = false;
+  }
+
+  if ((pitch == 85 && velocity == 0|| pitch == 85 && velocity == 64)) {
+    keyz[49] = false;
+    //C6Sharp.stop();
+    Do6Sharp = false;
+  }
+
+  if ((pitch == 86 && velocity == 0 || pitch == 86 && velocity == 64)) {
+    keyz[50] = false;
+    //D6.stop();
+    Re6 = false;
+  }
+
+  if ((pitch == 87 && velocity == 0 || pitch == 87 && velocity == 64)) {
+    keyz[51] = false;
+    //D6Sharp.stop();
+    Re6Sharp = false;
+  }
+
+  if ((pitch == 88 && velocity == 0 || pitch == 88 && velocity == 64)) {
+    keyz[52] = false;
+    //E6.stop();
+    Mi6 = false;
+  }
+
+  if ((pitch == 89 && velocity == 0 || pitch == 89 && velocity == 64)) {
+    keyz[53] = false;
+    //F6.stop();
+    Fa6 = false;
+  }
+
+  if ((pitch == 90 && velocity == 0 || pitch == 90 && velocity == 64)) {
+    keyz[54] = false;
+    //F6Sharp.stop();
+    Fa6Sharp = false;
+  }
+
+  if ((pitch == 91 && velocity == 0 || pitch == 91 && velocity == 64)) {
+    keyz[55] = false;
+    //G6.stop();
+    Sol6 = false;
+  }
+
+  if ((pitch == 92 && velocity == 0 || pitch == 92 && velocity == 64)) {
+    keyz[56] = false;
+    //G6Sharp.stop();
+    Sol6Sharp = false;
+  }
+
+  if ((pitch == 93 && velocity == 0 || pitch == 93 && velocity == 64)) {
+    keyz[57] = false;
+    //A6.stop();
+    La6 = false;
+  }
+
+  if ((pitch == 94 && velocity == 0 || pitch == 94 && velocity == 64)) {
+    keyz[58] = false;
+    //A6Sharp.stop();
+    La6Sharp = false;
+  }
+
+  if ((pitch == 95 && velocity == 0 || pitch == 95 && velocity == 64)) {
+    keyz[59] = false;
+    //B6.stop();
+    Ti6 = false;
+  }
+  
+  
+  
+  
+  if ((pitch == 96 && velocity == 0 || pitch == 96 && velocity == 64)) {
+    keyz[60] = false;
+    //C7.stop();
+    Do7 = false;
+  }
 }

@@ -306,4 +306,200 @@ void notePressTrigggers(int pitch, int velocity) {
     noteC5Velocity[ENTRYPOINT_SCREEN] = velocity;
     Do5 = true;
   }
+  
+   if (pitch == 73) {
+    keyz[37] = true;
+    positionLastInput = 37;
+    //C5Sharp.trigger();
+    noteC5SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    Do5Sharp = true;
+  }
+
+  if (pitch == 74) {
+    keyz[38] = true;
+    positionLastInput = 38;
+    //D5.trigger();
+    noteD5Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Re5 = true;
+  }
+
+  if (pitch == 75) {
+    keyz[39] = true;
+    positionLastInput = 39;
+    //D5Sharp.trigger();
+    noteD5SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    Re5Sharp = true;
+  }
+
+  if (pitch == 76) {
+    keyz[40] = true;
+    positionLastInput = 40;
+    //E5.trigger();
+    noteE5Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Mi5 = true;
+  }
+
+  if (pitch == 77) {
+    keyz[41] = true;
+    positionLastInput = 41;
+    //F5.trigger();
+    noteF5Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Fa5 = true;
+  }
+
+  if (pitch == 78) {
+    keyz[42] = true;
+    positionLastInput = 42;
+    //F5Sharp.trigger();
+    noteF5SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    Fa5Sharp = true;
+  }
+
+  if (pitch == 79) {
+    keyz[43] = true;
+    positionLastInput = 43;
+    //G5.trigger();
+    noteG5Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Sol5 = true;
+  }
+
+  if (pitch == 80) {
+    keyz[44] = true;
+    positionLastInput = 44;
+    //G5Sharp.trigger();
+    noteG5SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    Sol5Sharp = true;
+  }
+
+  if (pitch == 81) {
+    keyz[45] = true;
+    positionLastInput = 45;
+    //A5.trigger();
+    noteA5Velocity[ENTRYPOINT_SCREEN] = velocity;
+    La5 = true;
+  }
+
+  if (pitch == 82) {
+    keyz[46] = true;
+    positionLastInput = 46;
+    //A5Sharp.trigger();
+    noteA5SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    La5Sharp = true;
+  }
+
+  if (pitch == 83) {
+    keyz[47] = true;
+    positionLastInput = 47;
+    //B5.trigger();
+    noteB5Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Ti5 = true;
+  }
+  
+   //---------fifth octave---------
+
+  if (pitch == 84) {
+    keyz[48] = true;
+    positionLastInput = 48;
+    //C6.trigger();
+    noteC6Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Do6 = true;
+  }
+  
+   if (pitch == 85) {
+    keyz[49] = true;
+    positionLastInput = 49;
+    //C6Sharp.trigger();
+    noteC6SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    Do6Sharp = true;
+  }
+
+  if (pitch == 86) {
+    keyz[50] = true;
+    positionLastInput = 50;
+    //D6.trigger();
+    noteD6Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Re6 = true;
+  }
+
+  if (pitch == 87) {
+    keyz[51] = true;
+    positionLastInput = 51;
+    //D6Sharp.trigger();
+    noteD6SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    Re6Sharp = true;
+  }
+
+  if (pitch == 88) {
+    keyz[52] = true;
+    positionLastInput = 52;
+    //E6.trigger();
+    noteE6Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Mi6 = true;
+  }
+
+  if (pitch == 89) {
+    keyz[53] = true;
+    positionLastInput = 53;
+    //F6.trigger();
+    noteF6Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Fa6 = true;
+  }
+
+  if (pitch == 90) {
+    keyz[54] = true;
+    positionLastInput = 54;
+    //F6Sharp.trigger();
+    noteF6SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    Fa6Sharp = true;
+  }
+
+  if (pitch == 91) {
+    keyz[55] = true;
+    positionLastInput = 55;
+    //G6.trigger();
+    noteG6Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Sol6 = true;
+  }
+
+  if (pitch == 92) {
+    keyz[56] = true;
+    positionLastInput = 56;
+    //G6Sharp.trigger();
+    noteG6SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    Sol6Sharp = true;
+  }
+
+  if (pitch == 93) {
+    keyz[57] = true;
+    positionLastInput = 57;
+    //A6.trigger();
+    noteA6Velocity[ENTRYPOINT_SCREEN] = velocity;
+    La6 = true;
+  }
+
+  if (pitch == 94) {
+    keyz[58] = true;
+    positionLastInput = 58;
+    //A6Sharp.trigger();
+    noteA6SharpVelocity[ENTRYPOINT_SCREEN] = velocity;
+    La6Sharp = true;
+  }
+
+  if (pitch == 95) {
+    keyz[59] = true;
+    positionLastInput = 59;
+    //B6.trigger();
+    noteB6Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Ti6 = true;
+  }
+  
+  
+  
+   if (pitch == 96) {
+    keyz[60] = true;
+    positionLastInput = 60;
+    //C7.trigger();
+    noteC7Velocity[ENTRYPOINT_SCREEN] = velocity;
+    Do7 = true;
+  }
 }

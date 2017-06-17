@@ -1,4 +1,4 @@
-//Da Capo in its current form spans 5 octaves (C2 to C5 ---- (61 notes in total). In this code, middle C (C4) is also referred to as C4 or Do4 (C of the Third Octave covered in Da Capo). //<>// //<>// //<>// //<>//
+//Da Capo in its current form spans 5 octaves (C2 to C5 ---- (61 notes in total). In this code, middle C (C4) is also referred to as C4 or Do4 (C of the Third Octave covered in Da Capo). //<>// //<>// //<>// //<>// //<>//
 //First Octave = starts with C2
 //Second Octave = C3
 //Third Octave = C4
@@ -69,6 +69,34 @@ boolean Ti4=false;
 //---------fourth octave---------
 
 boolean Do5=false;
+boolean Do5Sharp=false;
+boolean Re5=false;
+boolean Re5Sharp=false;
+boolean Mi5=false;
+boolean Fa5=false;
+boolean Fa5Sharp=false;
+boolean Sol5=false;
+boolean Sol5Sharp=false;
+boolean La5=false;
+boolean La5Sharp=false;
+boolean Ti5=false;
+
+//---------fifth octave---------
+
+boolean Do6=false;
+boolean Do6Sharp=false;
+boolean Re6=false;
+boolean Re6Sharp=false;
+boolean Mi6=false;
+boolean Fa6=false;
+boolean Fa6Sharp=false;
+boolean Sol6=false;
+boolean Sol6Sharp=false;
+boolean La6=false;
+boolean La6Sharp=false;
+boolean Ti6=false;
+
+boolean Do7=false;
 
 
 
@@ -194,13 +222,89 @@ int [] noteB4Velocity = new int[MAX_NOTES];
 int [] noteC5 = new int[MAX_NOTES];
 int [] noteC5Velocity = new int[MAX_NOTES];
 
+int [] noteC5Sharp = new int[MAX_NOTES];
+int [] noteC5SharpVelocity = new int[MAX_NOTES];
+
+int [] noteD5 = new int[MAX_NOTES];
+int [] noteD5Velocity = new int[MAX_NOTES];
+
+int [] noteD5Sharp = new int[MAX_NOTES];
+int [] noteD5SharpVelocity = new int[MAX_NOTES];
+
+int [] noteE5 = new int[MAX_NOTES];
+int [] noteE5Velocity = new int[MAX_NOTES];
+
+int [] noteF5 = new int[MAX_NOTES];
+int [] noteF5Velocity = new int[MAX_NOTES];
+
+int [] noteF5Sharp = new int[MAX_NOTES];
+int [] noteF5SharpVelocity = new int[MAX_NOTES];
+
+int [] noteG5 = new int[MAX_NOTES];
+int [] noteG5Velocity = new int[MAX_NOTES];
+
+int [] noteG5Sharp = new int[MAX_NOTES];
+int [] noteG5SharpVelocity = new int[MAX_NOTES];
+
+int [] noteA5 = new int[MAX_NOTES];
+int [] noteA5Velocity = new int[MAX_NOTES];
+
+int [] noteA5Sharp = new int[MAX_NOTES];
+int [] noteA5SharpVelocity = new int[MAX_NOTES];
+
+int [] noteB5 = new int[MAX_NOTES];
+int [] noteB5Velocity = new int[MAX_NOTES];
+
+// ---- fifth octave -----
+
+int [] noteC6 = new int[MAX_NOTES];
+int [] noteC6Velocity = new int[MAX_NOTES];
+
+int [] noteC6Sharp = new int[MAX_NOTES];
+int [] noteC6SharpVelocity = new int[MAX_NOTES];
+
+int [] noteD6 = new int[MAX_NOTES];
+int [] noteD6Velocity = new int[MAX_NOTES];
+
+int [] noteD6Sharp = new int[MAX_NOTES];
+int [] noteD6SharpVelocity = new int[MAX_NOTES];
+
+int [] noteE6 = new int[MAX_NOTES];
+int [] noteE6Velocity = new int[MAX_NOTES];
+
+int [] noteF6 = new int[MAX_NOTES];
+int [] noteF6Velocity = new int[MAX_NOTES];
+
+int [] noteF6Sharp = new int[MAX_NOTES];
+int [] noteF6SharpVelocity = new int[MAX_NOTES];
+
+int [] noteG6 = new int[MAX_NOTES];
+int [] noteG6Velocity = new int[MAX_NOTES];
+
+int [] noteG6Sharp = new int[MAX_NOTES];
+int [] noteG6SharpVelocity = new int[MAX_NOTES];
+
+int [] noteA6 = new int[MAX_NOTES];
+int [] noteA6Velocity = new int[MAX_NOTES];
+
+int [] noteA6Sharp = new int[MAX_NOTES];
+int [] noteA6SharpVelocity = new int[MAX_NOTES];
+
+int [] noteB6 = new int[MAX_NOTES];
+int [] noteB6Velocity = new int[MAX_NOTES];
+
+
+
+int [] noteC7 = new int[MAX_NOTES];
+int [] noteC7Velocity = new int[MAX_NOTES];
+
 int currentColor = 0;
 int midiDevice  = 3;
 int currentVelocity = 0;
 
 
 void setup() {
-  size(1270, 1000, P2D);
+  size(1920, 1080, P2D);
   //fullScreen(P3D);
   noStroke();
   MidiBus.list(); 
@@ -212,6 +316,7 @@ void setup() {
 
 void draw() {
   background(255);
+  scale(0.65);
 
   notesCompKeyboard();
   noteVis();
@@ -230,7 +335,7 @@ void midiMessage(MidiMessage message, long timestamp, String bus_name) {
 
 void noteOn(int channel, int pitch, int velocity) {
   // Receive a noteOn
-  println(); //<>// //<>// //<>//
+  println(); //<>// //<>// //<>// //<>//
   println("Note On:");
   println("--------");
   println("Channel:"+channel);

@@ -316,7 +316,7 @@ void setup() {
 
 void draw() {
   background(255);
-  scale(0.65);
+  //scale(0.65);
 
   notesCompKeyboard();
   noteVis();

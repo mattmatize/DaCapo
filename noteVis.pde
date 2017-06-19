@@ -118,7 +118,7 @@ void noteVis() { //<>//
 
   for (int i = 0; i < SCREEN_SIZE; i++) {
     if (noteC3[i] == 1) {
-      stroke(0, 118, 103);
+      stroke(0, 118, 163);
       line(390 - noteC3Velocity[i]/velDiv, i, 390 + noteC3Velocity[i]/velDiv, i);
     } 
     noteC3[i] = noteC3[i + 1];
@@ -229,7 +229,7 @@ void noteVis() { //<>//
   //MIDDLE C - C4
   for (int i =0; i<SCREEN_SIZE; i++) {
     if (noteC4[i]==1) {
-      stroke(0, 146, 200);
+      stroke(0, 164, 200);
       line(750 - noteC4Velocity[i]/velDiv, i, 750 + noteC4Velocity[i]/velDiv, i);
     }
     noteC4[i]=noteC4[i+1];

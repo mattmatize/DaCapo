@@ -8,6 +8,10 @@
 
 // SimpleMidi.pde
 
+//mainMenu
+PFont daCapoTitle;
+int screen;
+
 int timer = 0;
 int timeFlag = 0;
 

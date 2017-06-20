@@ -1,4 +1,4 @@
-//Da Capo in its current form spans 5 octaves (C2 to C5 ---- (61 notes in total). In this code, middle C (C4) is also referred to as C4 or Do4 (C of the Third Octave covered in Da Capo). //<>// //<>// //<>// //<>// //<>//
+//Da Capo in its current form spans 5 octaves (C2 to C5 ---- (61 notes in total). In this code, middle C (C4) is also referred to as C4 or Do4 (C of the Third Octave covered in Da Capo). //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>//
 //First Octave = starts with C2
 //Second Octave = C3
 //Third Octave = C4
@@ -9,8 +9,10 @@
 // SimpleMidi.pde
 
 //mainMenu
-PFont daCapoTitle;
-int screen;
+PFont daCapoTitleFont;
+int playFill = 0;
+int setupFill = 0;
+int daCapoScreen;
 
 int timer = 0;
 int timeFlag = 0;
@@ -308,11 +310,20 @@ int currentVelocity = 0;
 
 
 void setup() {
+  daCapoScreen = 1;
   size(1920, 1080, P2D);
   //fullScreen(P3D);
   noStroke();
   MidiBus.list(); 
   myBus = new MidiBus(this, 0, "");
+
+  daCapoTitleFont  = createFont("VulfMono-Black", 100);
+  //textFont(daCapoTitleFont );
+  //textAlign(CENTER, CENTER);
+  //text("!@#$%", width/2, height/2);
+
+  //daCapoTitleFont = createFont("Georgia", 1000, true);
+  //textFont = (daCapoTitleFont);
 
   //minim = new Minim(this);
   //soundFiles();
@@ -321,11 +332,32 @@ void setup() {
 void draw() {
   background(255);
   //scale(0.65);
+  mainMenu();
 
-  notesCompKeyboard();
-  noteVis();
-  printScreen();
-}
+  if (daCapoScreen == 2) {
+    notesCompKeyboard();
+    noteVis();
+    printScreen();
+  }
+
+  if (daCapoScreen == 3) {
+    setupMenu();
+  }
+} 
+
+void mousePressed()
+{
+  if (mouseX >830 && mouseX<980 && mouseY>620 && mouseY<670)
+  {
+    daCapoScreen = 2;
+  }
+  
+  if (mouseX >830 && mouseX<980 && mouseY>690 && mouseY<740)
+  {
+    daCapoScreen = 3;
+  }
+} 
+
 
 void midiMessage(MidiMessage message, long timestamp, String bus_name) { 
   int note = (int)(message.getMessage()[1] & 0xFF) ;
@@ -339,7 +371,7 @@ void midiMessage(MidiMessage message, long timestamp, String bus_name) {
 
 void noteOn(int channel, int pitch, int velocity) {
   // Receive a noteOn
-  println(); //<>// //<>// //<>// //<>//
+  println(); //<>//
   println("Note On:");
   println("--------");
   println("Channel:"+channel);
@@ -367,4 +399,8 @@ void keyPressed() {
 
 void keyReleased() {
   keyReleaseTriggers();
+
+  if (key == 'z') {
+    daCapoScreen = 1;
+  }
 }

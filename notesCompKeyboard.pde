@@ -74,9 +74,14 @@ int lastVelocityC7 = 0;
 
 void notesCompKeyboard() {
 
-  int ENTRYPOINT_SCREEN = 698;
+  //int ENTRYPOINT_SCREEN = 1028;
   
-   //---------first octave---------
+  //for proper printing:
+  int ENTRYPOINT_SCREEN = 1080;
+
+  setupScreen = 0;
+
+  //---------first octave---------
 
   if (keyz[0]) {
     noteC2[ENTRYPOINT_SCREEN] = 1;
@@ -603,7 +608,7 @@ void notesCompKeyboard() {
     noteC5[ENTRYPOINT_SCREEN] = 0;
     noteC5Velocity[ENTRYPOINT_SCREEN] = 0;
   }
-  
+
   //------------------
   if (keyz[37]) {
     noteC5Sharp[ENTRYPOINT_SCREEN] = 1;
@@ -758,8 +763,8 @@ void notesCompKeyboard() {
     noteB5[ENTRYPOINT_SCREEN] = 0;
     noteB5Velocity[ENTRYPOINT_SCREEN] = 0;
   }
-  
-   ////-----------fifth octave-----------
+
+  ////-----------fifth octave-----------
   if (keyz[48]) {
     noteC6[ENTRYPOINT_SCREEN] = 1;
 
@@ -773,7 +778,7 @@ void notesCompKeyboard() {
     noteC6[ENTRYPOINT_SCREEN] = 0;
     noteC6Velocity[ENTRYPOINT_SCREEN] = 0;
   }
-  
+
   //------------------
   if (keyz[49]) {
     noteC6Sharp[ENTRYPOINT_SCREEN] = 1;
@@ -944,5 +949,4 @@ void notesCompKeyboard() {
     noteC7[ENTRYPOINT_SCREEN] = 0;
     noteC7Velocity[ENTRYPOINT_SCREEN] = 0;
   }
-
 }

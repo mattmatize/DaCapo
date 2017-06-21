@@ -1,43 +1,37 @@
 void setupMenu () {
+ 
+  //int MIDIControllersFill = 0;
+  //int soundOptionsFill = 0;
 
-  if (daCapoScreen == 3) {
+  if (setupScreen == 1) {
     fill(0);
     textAlign(CENTER, CENTER);
-    textFont(daCapoTitleFont);
-    text("Screen Color", width/2, height/2);
+    textFont(setupTitleFont);
+    text("Setup", 300, 154);
     textSize(50);
 
-    fill(playFill);
+    fill(screenColorFill);
     textAlign(CENTER, CENTER);
     textSize(50);
-    text("Play", 900, 650);
+    text("Screen Color", 400, 268);
 
-    //if (keyPressed == true) {
-    //  daCapoScreen = 2;
-    //}
-
-    //rect(880, 550, 100, 100);
-    //fill(0);
-
-    println (mouseX +"," + mouseY);
-
-     if (mouseX >830 && mouseX<980 && mouseY>620 && mouseY<670)
+    if (mouseX >330 && mouseX<480 && mouseY>238 && mouseY<288)
     {
-      playFill = 150;
+      screenColorFill = 150;
     } else {
-      playFill = 0;
+      screenColorFill = 0;
     }
 
-    fill(setupFill);
+    fill(MIDIControllersFill);
     textAlign(CENTER, CENTER);
     textSize(50);
-    text("MIDI Controllers", 900, 720);
+    text("MIDI Controllers", 500, 368);
 
-    if (mouseX >830 && mouseX<980 && mouseY>690 && mouseY<740)
+    if (mouseX >430 && mouseX<580 && mouseY>338 && mouseY<388)
     {
-      setupFill = 150;
+      MIDIControllersFill = 150;
     } else {
-      setupFill = 0;
+      MIDIControllersFill = 0;
     }
   }
 }

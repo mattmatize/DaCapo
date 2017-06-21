@@ -1,6 +1,6 @@
 void noteVis() { //<>//
 
-  int SCREEN_SIZE = 699;
+  int SCREEN_SIZE = 1599;
   int velDiv = 3;
 
   //---------first octave---------

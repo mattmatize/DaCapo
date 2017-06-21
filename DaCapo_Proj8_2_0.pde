@@ -1,4 +1,5 @@
-//Da Capo in its current form spans 5 octaves (C2 to C5 ---- (61 notes in total). In this code, middle C (C4) is also referred to as C4 or Do4 (C of the Third Octave covered in Da Capo). //<>// //<>// //<>// //<>// //<>// //<>// //<>// //<>//
+//Da Capo in its current form spans 5 octaves (C2 to C5 ---- (61 notes in total). In this code, middle C (C4) is also referred to as C4 or Do4  //<>// //<>// //<>//
+//(C of the Third Octave covered in Da Capo).
 //First Octave = starts with C2
 //Second Octave = C3
 //Third Octave = C4
@@ -10,9 +11,17 @@
 
 //mainMenu
 PFont daCapoTitleFont;
+PFont setupTitleFont;
 int playFill = 0;
 int setupFill = 0;
+int screenColorFill = 0;
+int MIDIControllersFill = 0;
+int soundOptionsFill = 0;
+
 int daCapoScreen;
+int setupScreen = 0;
+int MIDIMenuScreen = 0;
+
 
 int timer = 0;
 int timeFlag = 0;
@@ -20,7 +29,7 @@ int timeFlag = 0;
 int quantasImagens = 0;
 String [] list = new String [1];
 
-int MAX_NOTES = 700;
+int MAX_NOTES = 2000;
 import themidibus.*; //Import the library
 import javax.sound.midi.MidiMessage; 
 
@@ -312,18 +321,15 @@ int currentVelocity = 0;
 void setup() {
   daCapoScreen = 1;
   size(1920, 1080, P2D);
+  //size(1400, 1050, P2D);
+  //size(1600, 900, P2D);
   //fullScreen(P3D);
   noStroke();
   MidiBus.list(); 
   myBus = new MidiBus(this, 0, "");
 
   daCapoTitleFont  = createFont("VulfMono-Black", 100);
-  //textFont(daCapoTitleFont );
-  //textAlign(CENTER, CENTER);
-  //text("!@#$%", width/2, height/2);
-
-  //daCapoTitleFont = createFont("Georgia", 1000, true);
-  //textFont = (daCapoTitleFont);
+  setupTitleFont = createFont("VulfMono-BoldItalic", 100);
 
   //minim = new Minim(this);
   //soundFiles();
@@ -340,24 +346,37 @@ void draw() {
     printScreen();
   }
 
-  if (daCapoScreen == 3) {
+  if (setupScreen == 1) {
     setupMenu();
+  }
+
+  if (MIDIMenuScreen == 1) {
+    MIDIMenu();
   }
 } 
 
 void mousePressed()
 {
-  if (mouseX >830 && mouseX<980 && mouseY>620 && mouseY<670)
-  {
-    daCapoScreen = 2;
+  if (daCapoScreen == 1) {
+    if (mouseX >830 && mouseX<980 && mouseY>620 && mouseY<670)
+    {
+      daCapoScreen = 2;
+    }
+    if (mouseX >830 && mouseX<980 && mouseY>690 && mouseY<740)
+    {
+      setupScreen = 1;
+      daCapoScreen = 0;
+    }
   }
-  
-  if (mouseX >830 && mouseX<980 && mouseY>690 && mouseY<740)
-  {
-    daCapoScreen = 3;
+
+  if (setupScreen == 1) {
+    if (mouseX >430 && mouseX<580 && mouseY>338 && mouseY<388)
+    {
+      MIDIMenuScreen= 1;
+      setupScreen = 0;
+    }
   }
 } 
-
 
 void midiMessage(MidiMessage message, long timestamp, String bus_name) { 
   int note = (int)(message.getMessage()[1] & 0xFF) ;
@@ -371,7 +390,7 @@ void midiMessage(MidiMessage message, long timestamp, String bus_name) {
 
 void noteOn(int channel, int pitch, int velocity) {
   // Receive a noteOn
-  println(); //<>//
+  println();
   println("Note On:");
   println("--------");
   println("Channel:"+channel);

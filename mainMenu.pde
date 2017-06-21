@@ -2,13 +2,13 @@ void mainMenu () {
 
   if (daCapoScreen == 1) {
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(CENTER);
     textFont(daCapoTitleFont);
     text("Da Capo", width/2, height/2);
     textSize(50);
 
     fill(playFill);
-    textAlign(CENTER, CENTER);
+    textAlign(CENTER);
     textSize(50);
     text("Play", 900, 650);
 
@@ -21,7 +21,7 @@ void mainMenu () {
 
     println (mouseX +"," + mouseY);
 
-     if (mouseX >830 && mouseX<980 && mouseY>620 && mouseY<670)
+    if (mouseX >830 && mouseX<980 && mouseY>620 && mouseY<670)
     {
       playFill = 150;
     } else {
@@ -29,7 +29,7 @@ void mainMenu () {
     }
 
     fill(setupFill);
-    textAlign(CENTER, CENTER);
+    textAlign(CENTER);
     textSize(50);
     text("Setup", 900, 720);
 
@@ -40,4 +40,16 @@ void mainMenu () {
       setupFill = 0;
     }
   }
-}
+} 
+//void mousePressed()
+//{
+//  if (mouseX >830 && mouseX<980 && mouseY>620 && mouseY<670)
+//  {
+//    daCapoScreen = 2;
+//  }
+
+//  if (mouseX >830 && mouseX<980 && mouseY>690 && mouseY<740)
+//  {
+//    setupScreen = 1;
+//  }
+//}

@@ -11,16 +11,35 @@
 
 //mainMenu
 PFont daCapoTitleFont;
-PFont setupTitleFont;
+PFont mainMenuItemsFont;
 int playFill = 0;
 int setupFill = 0;
+
+//setupMenu
+PFont setupTitleFont;
+PFont setupMenuItemsFont;
 int screenColorFill = 0;
 int MIDIControllersFill = 0;
 int soundOptionsFill = 0;
 
+//screenOptionsMenu
+PFont screenOptionsTitleFont;
+
+//MIDIMenu
+PFont MIDIMenuTitleFont;
+PFont MIDIMenuItemsFont;
+
+//soundOptionsMenu
+PFont soundOptionsTitleFont;
+
+
+int backArrowFill = 0;
+
 int daCapoScreen;
 int setupScreen = 0;
+int screenOptionsScreen = 0;
 int MIDIMenuScreen = 0;
+int soundOptionsScreen = 0;
 
 
 int timer = 0;
@@ -328,8 +347,30 @@ void setup() {
   MidiBus.list(); 
   myBus = new MidiBus(this, 0, "");
 
-  daCapoTitleFont  = createFont("VulfMono-Black", 100);
-  setupTitleFont = createFont("VulfMono-BoldItalic", 100);
+
+  //"VulfMono-Black"
+  //"VulfMono-BlackItalic"
+  //"VulfMono-BoldItalic"
+  //"VulfMono-LightItalic"
+
+  //mainMenu
+  daCapoTitleFont  = createFont("VulfMono-BlackItalic", 100);
+  mainMenuItemsFont = createFont ("VulfMono-Light", 50);
+
+  //setupMenu
+  setupTitleFont = createFont("VulfMono-Italic", 100);
+  setupMenuItemsFont = createFont ("VulfMono-Light", 50);
+
+  //screenOptionsMenu
+  screenOptionsTitleFont = createFont("VulfMono-Italic", 100);
+
+  //MIDIMenu
+  MIDIMenuTitleFont = createFont("VulfMono-Italic", 100);
+  MIDIMenuItemsFont = createFont("VulfMono-Light", 50);
+
+  //soundOptionsMenu
+  soundOptionsTitleFont = createFont("VulfMono-Italic", 100);
+
 
   //minim = new Minim(this);
   //soundFiles();
@@ -350,19 +391,27 @@ void draw() {
     setupMenu();
   }
 
+  if (screenOptionsScreen == 1) {
+    screenOptionsMenu();
+  }
+
   if (MIDIMenuScreen == 1) {
     MIDIMenu();
+  }
+
+  if (soundOptionsScreen == 1) {
+    soundOptionsMenu();
   }
 } 
 
 void mousePressed()
 {
   if (daCapoScreen == 1) {
-    if (mouseX >830 && mouseX<980 && mouseY>620 && mouseY<670)
+    if (mouseX >830 && mouseX<980 && mouseY>600 && mouseY<650)
     {
       daCapoScreen = 2;
     }
-    if (mouseX >830 && mouseX<980 && mouseY>690 && mouseY<740)
+    if (mouseX >860 && mouseX<1050 && mouseY>690 && mouseY<740)
     {
       setupScreen = 1;
       daCapoScreen = 0;
@@ -370,10 +419,58 @@ void mousePressed()
   }
 
   if (setupScreen == 1) {
+    //go back to title
+    if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
+    {
+      daCapoScreen = 1;
+      setupScreen = 0;
+    }
+    
+    // go to Screen Options
+    if (mouseX >180 && mouseX<620 && mouseY>238 && mouseY<288)
+    {
+      screenOptionsScreen = 1;
+      setupScreen = 0;
+    }
+
+    //go to MIDI
     if (mouseX >430 && mouseX<580 && mouseY>338 && mouseY<388)
     {
-      MIDIMenuScreen= 1;
+      MIDIMenuScreen = 1;
       setupScreen = 0;
+    }
+
+    //go to Sound
+    if (mouseX >180 && mouseX<620 && mouseY>438 && mouseY<488)
+    {
+      soundOptionsScreen = 1;
+      setupScreen = 0;
+      screenOptionsScreen = 0;
+    }
+  }
+  
+   if (screenOptionsScreen == 1) {
+    if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
+    {
+      setupScreen = 1;
+      screenOptionsScreen = 0;
+    }
+  }
+
+  if (MIDIMenuScreen == 1) {
+    if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
+    {
+      MIDIMenuScreen = 0;
+      setupScreen = 1;
+    }
+  }
+
+  if (soundOptionsScreen == 1) {
+    if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
+    {
+      soundOptionsScreen = 0;
+      setupScreen = 1;
+      //screenOptionsScreen = 0;
     }
   }
 } 

@@ -1,21 +1,36 @@
 void setupMenu () {
- 
+
   //int MIDIControllersFill = 0;
   //int soundOptionsFill = 0;
 
   if (setupScreen == 1) {
+    fill(backArrowFill);
+    textAlign(CENTER, CENTER);
+    textFont(MIDIMenuTitleFont);
+    textSize(60);
+    text("◀", 100, 154);
+    
+     if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
+    {
+      backArrowFill = 150;
+    } else {
+      backArrowFill = 0;
+    }
+    
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(LEFT, CENTER);
     textFont(setupTitleFont);
-    text("Setup", 300, 154);
+    text("Setup", 150, 154);
     textSize(50);
 
+
+    textAlign(LEFT);
+    textFont(setupMenuItemsFont);
     fill(screenColorFill);
-    textAlign(CENTER, CENTER);
     textSize(50);
-    text("Screen Color", 400, 268);
+    text("Screen Color", 200, 300);
 
-    if (mouseX >330 && mouseX<480 && mouseY>238 && mouseY<288)
+    if (mouseX >180 && mouseX<690 && mouseY>238 && mouseY<288)
     {
       screenColorFill = 150;
     } else {
@@ -23,15 +38,25 @@ void setupMenu () {
     }
 
     fill(MIDIControllersFill);
-    textAlign(CENTER, CENTER);
     textSize(50);
-    text("MIDI Controllers", 500, 368);
+    text("MIDI Controllers", 200, 400);
 
-    if (mouseX >430 && mouseX<580 && mouseY>338 && mouseY<388)
+    if (mouseX >180 && mouseX<820 && mouseY>338 && mouseY<388)
     {
       MIDIControllersFill = 150;
     } else {
       MIDIControllersFill = 0;
+    }
+    
+    fill(soundOptionsFill);
+    textSize(50);
+    text("Sound", 200, 500);
+
+    if (mouseX >180 && mouseX<620 && mouseY>438 && mouseY<488)
+    {
+      soundOptionsFill = 150;
+    } else {
+      soundOptionsFill = 0;
     }
   }
 }

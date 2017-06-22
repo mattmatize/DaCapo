@@ -36,6 +36,7 @@ PFont soundOptionsTitleFont;
 int backArrowFill = 0;
 
 int daCapoScreen;
+int pauseScreen = 0;
 int setupScreen = 0;
 int screenOptionsScreen = 0;
 int MIDIMenuScreen = 0;
@@ -52,13 +53,18 @@ int MAX_NOTES = 2000;
 import themidibus.*; //Import the library
 import javax.sound.midi.MidiMessage; 
 
-//screenOptionsKnob
+//---------screenOptionsKnob------------------------------------------------------------------------
 import controlP5.*;
 ControlP5 cp5;
 
 int myColorBackground = color(0, 0, 0);
 int knobValue = 100;
 Knob myKnobA;
+
+int mySliderColor = color(0, 0, 0);
+int sliderValue = 100;
+Slider colorSlider;
+//--------------------------------------------------------------------------------------------------
 
 MidiBus myBus; 
 
@@ -358,36 +364,40 @@ void setup() {
   daCapoScreen = 1;
 
   cp5 = new ControlP5(this);
+  PFont p = createFont("VulfMono-Light", 30); 
+  ControlFont font = new ControlFont(p);
+  cp5.setFont(font);
 
-  myKnobA = cp5.addKnob("knob")
+  //myKnobA = cp5.addKnob("knob")
+  //  .setRange(0, 255)
+  //  .setValue(255)
+  //  .setPosition(100, 70)
+  //  .setRadius(50)
+  //  .setDragDirection(Knob.VERTICAL);
+
+  //myKnobA.setVisible(false);
+
+  colorSlider = cp5.addSlider("slider")
+    .setPosition(200, 250)
+    .setSize(400, 70)
     .setRange(0, 255)
     .setValue(255)
-    .setPosition(100, 70)
-    .setRadius(50)
-    .setDragDirection(Knob.VERTICAL);
-
-  myKnobA.setVisible(false);
-
-  //cp5.addKnob("knob").setVisible(true);
+    .setColorValue(0xffffffff)
+    .setColorLabel(0xff000000);
+  ;
 
 
-  //  if (screenOptionsScreen == 1){
+  //textAlign(CENTER, CENTER);
+  //textFont(MIDIMenuTitleFont);
+  //textSize(60);
+  //text("◀", 100, 154);
 
-  //    cp5.addKnob("knob").setVisible(true);
+  //fill(0);
+  //textAlign(LEFT, CENTER);
+  //text("Screen Options", 150, 154);
+  //textSize(50);
 
-  //  }
-
-  //if (screenOptionsScreen == 1) {
-  //cp5.addKnob("knob").setVisible(false);
-  //}
-
-  //if (daCapoScreen == 0) {
-  //  cp5.hide("knob");
-  //}
-  //
-
-  //myKnobA.hide();
-
+  colorSlider.setVisible(false);
 
   //"VulfMono-Black"
   //"VulfMono-BlackItalic"
@@ -418,11 +428,13 @@ void setup() {
 }
 
 void draw() {
-  background(255);
+  background(mySliderColor);
 
   if (screenOptionsScreen == 1) {
-    background(myColorBackground);
-    fill(knobValue);
+    //background(myColorBackground);
+    //fill(knobValue);
+
+    background(mySliderColor);
   } 
   //scale(0.65);
   mainMenu();
@@ -450,9 +462,13 @@ void draw() {
   }
 } 
 
-void knob(int theValue) {
-  myColorBackground = color(theValue);
-  println("a knob event. setting background to "+theValue);
+//void knob(int theValue) {
+//  myColorBackground = color(theValue);
+//  println("a knob event. setting background to "+theValue);
+//}
+
+void slider(float theColor) {
+  mySliderColor = color(theColor);
 }
 
 void mousePressed()

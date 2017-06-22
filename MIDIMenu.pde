@@ -38,6 +38,8 @@ void MIDIMenu () {
 
   if (MIDIMenuScreen == 1) {
 
+    colorSlider.setVisible(false);
+
     if (printMIDIInput == true) {
       //System.out.println("----------Input (from availableInputs())----------");
       String[] available_inputs = MidiBus.availableInputs(); //Returns an array of available input devices
@@ -60,14 +62,14 @@ void MIDIMenu () {
     textFont(MIDIMenuTitleFont);
     textSize(60);
     text("◀", 100, 154);
-    
-     if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
+
+    if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
     {
       backArrowFill = 150;
     } else {
       backArrowFill = 0;
     }
-    
+
     textAlign(LEFT, CENTER);
     fill(0);
     textSize(100);

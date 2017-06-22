@@ -1,8 +1,10 @@
 void screenOptionsMenu () {
   if (screenOptionsScreen == 1) {
-    
-      myKnobA.setVisible(true);
-      
+
+    //myKnobA.setVisible(true);
+
+    colorSlider.setVisible(true);
+
     fill(backArrowFill);
     textAlign(CENTER, CENTER);
     textFont(MIDIMenuTitleFont);

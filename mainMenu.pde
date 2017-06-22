@@ -1,6 +1,13 @@
 void mainMenu () {
 
   if (daCapoScreen == 1) {
+
+    colorSlider.setVisible(false);
+
+    PImage img;
+    img = loadImage("mainMenuImg.png");
+    background(img);
+
     fill(0);
     textAlign(CENTER);
     textFont(daCapoTitleFont);

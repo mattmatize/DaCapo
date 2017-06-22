@@ -4,19 +4,22 @@ void setupMenu () {
   //int soundOptionsFill = 0;
 
   if (setupScreen == 1) {
+
+    colorSlider.setVisible(false);
+
     fill(backArrowFill);
     textAlign(CENTER, CENTER);
     textFont(MIDIMenuTitleFont);
     textSize(60);
     text("◀", 100, 154);
-    
-     if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
+
+    if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
     {
       backArrowFill = 150;
     } else {
       backArrowFill = 0;
     }
-    
+
     fill(0);
     textAlign(LEFT, CENTER);
     textFont(setupTitleFont);
@@ -28,7 +31,7 @@ void setupMenu () {
     textFont(setupMenuItemsFont);
     fill(screenColorFill);
     textSize(50);
-    text("Screen Color", 200, 300);
+    text("Screen Options", 200, 300);
 
     if (mouseX >180 && mouseX<690 && mouseY>238 && mouseY<288)
     {
@@ -47,7 +50,7 @@ void setupMenu () {
     } else {
       MIDIControllersFill = 0;
     }
-    
+
     fill(soundOptionsFill);
     textSize(50);
     text("Sound", 200, 500);

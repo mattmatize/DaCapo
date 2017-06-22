@@ -52,6 +52,14 @@ int MAX_NOTES = 2000;
 import themidibus.*; //Import the library
 import javax.sound.midi.MidiMessage; 
 
+//screenOptionsKnob
+import controlP5.*;
+ControlP5 cp5;
+
+int myColorBackground = color(0, 0, 0);
+int knobValue = 100;
+Knob myKnobA;
+
 MidiBus myBus; 
 
 
@@ -338,7 +346,7 @@ int currentVelocity = 0;
 
 
 void setup() {
-  daCapoScreen = 1;
+
   size(1920, 1080, P2D);
   //size(1400, 1050, P2D);
   //size(1600, 900, P2D);
@@ -346,6 +354,39 @@ void setup() {
   noStroke();
   MidiBus.list(); 
   myBus = new MidiBus(this, 0, "");
+
+  daCapoScreen = 1;
+
+  cp5 = new ControlP5(this);
+
+  myKnobA = cp5.addKnob("knob")
+    .setRange(0, 255)
+    .setValue(255)
+    .setPosition(100, 70)
+    .setRadius(50)
+    .setDragDirection(Knob.VERTICAL);
+
+  myKnobA.setVisible(false);
+
+  //cp5.addKnob("knob").setVisible(true);
+
+
+  //  if (screenOptionsScreen == 1){
+
+  //    cp5.addKnob("knob").setVisible(true);
+
+  //  }
+
+  //if (screenOptionsScreen == 1) {
+  //cp5.addKnob("knob").setVisible(false);
+  //}
+
+  //if (daCapoScreen == 0) {
+  //  cp5.hide("knob");
+  //}
+  //
+
+  //myKnobA.hide();
 
 
   //"VulfMono-Black"
@@ -378,6 +419,11 @@ void setup() {
 
 void draw() {
   background(255);
+
+  if (screenOptionsScreen == 1) {
+    background(myColorBackground);
+    fill(knobValue);
+  } 
   //scale(0.65);
   mainMenu();
 
@@ -404,6 +450,11 @@ void draw() {
   }
 } 
 
+void knob(int theValue) {
+  myColorBackground = color(theValue);
+  println("a knob event. setting background to "+theValue);
+}
+
 void mousePressed()
 {
   if (daCapoScreen == 1) {
@@ -425,7 +476,7 @@ void mousePressed()
       daCapoScreen = 1;
       setupScreen = 0;
     }
-    
+
     // go to Screen Options
     if (mouseX >180 && mouseX<620 && mouseY>238 && mouseY<288)
     {
@@ -448,8 +499,8 @@ void mousePressed()
       screenOptionsScreen = 0;
     }
   }
-  
-   if (screenOptionsScreen == 1) {
+
+  if (screenOptionsScreen == 1) {
     if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
     {
       setupScreen = 1;

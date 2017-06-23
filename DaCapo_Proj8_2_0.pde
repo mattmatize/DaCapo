@@ -32,6 +32,16 @@ PFont MIDIMenuItemsFont;
 //soundOptionsMenu
 PFont soundOptionsTitleFont;
 
+//pauseScreenMenu
+PFont pauseMenuTitleFont;
+PFont pauseMenuPrintOptionFont;
+int pausePlayOptionFill = 0;
+int pausePlayTextFill = 0;
+int exportPrintEllipseFill = 0;
+int pausePrintOptionFill = 0;
+int pauseQuitFill = 0;
+int pauseQuitTextFill = 0;
+
 
 int backArrowFill = 0;
 
@@ -422,6 +432,9 @@ void setup() {
   //soundOptionsMenu
   soundOptionsTitleFont = createFont("VulfMono-Italic", 100);
 
+  //pauseMenu
+  pauseMenuTitleFont = createFont("VulfMono-Italic", 100);
+  pauseMenuPrintOptionFont = createFont("VulfMono-Light", 40);
 
   //minim = new Minim(this);
   //soundFiles();
@@ -459,6 +472,10 @@ void draw() {
 
   if (soundOptionsScreen == 1) {
     soundOptionsMenu();
+  }
+
+  if (pauseScreen == 1) {
+    pauseScreenMenu();
   }
 } 
 
@@ -540,6 +557,41 @@ void mousePressed()
       //screenOptionsScreen = 0;
     }
   }
+
+  //Pause Screen
+  if (pauseScreen == 1) {
+    //back
+    if (mouseX >80 && mouseX<120 && mouseY>140 && mouseY<170)
+    {
+      pauseScreen = 0;
+      daCapoScreen = 2;
+      //screenOptionsScreen = 0;
+    }
+
+    //Play Option
+    if (mouseX >520 && mouseX<600 && mouseY>430 && mouseY<570)
+    {
+      pauseScreen = 0;
+      daCapoScreen = 2;
+    }
+
+    //select record option
+    if (mouseX >880 && mouseX<1020 && mouseY>475 && mouseY<600)
+    {
+      println("Opening Process_4");
+      launch("/Users/mateusds/Desktop/stitch02/application.macosx/stitch02.app");
+      launch("/Users/mateusds/Desktop/stitch02/application.macosx/newDaCapoPrint.png");
+      //pauseScreen = 0;
+      //daCapoScreen = 2;
+      //screenOptionsScreen = 0;
+    }
+
+    //select quit option
+    if (mouseX >1270 && mouseX<1470 && mouseY>430 && mouseY<630)
+    {
+      exit();
+    }
+  }
 } 
 
 void midiMessage(MidiMessage message, long timestamp, String bus_name) { 
@@ -583,7 +635,30 @@ void keyPressed() {
 void keyReleased() {
   keyReleaseTriggers();
 
-  if (key == 'z') {
+  if (key == 'm') {
+    setupScreen = 0;
     daCapoScreen = 1;
+    pauseScreen = 0;
+    screenOptionsScreen = 0;
+    MIDIMenuScreen = 0;
+    soundOptionsScreen = 0;
+  }
+
+  if (key == 's') {
+    setupScreen = 1;
+    daCapoScreen = 0;
+    pauseScreen = 0;
+    screenOptionsScreen = 0;
+    MIDIMenuScreen = 0;
+    soundOptionsScreen = 0;
+  }
+
+  if (key == 'p') {
+    pauseScreen = 1;
+    daCapoScreen = 0;
+    setupScreen = 0;
+    screenOptionsScreen = 0;
+    MIDIMenuScreen = 0;
+    soundOptionsScreen = 0;
   }
 }
